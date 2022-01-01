@@ -8,7 +8,7 @@ import './index.css';
 
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route  } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { auth } from './firebaseConfig.js';
 
 import { setUser } from './actions/authAction.js';

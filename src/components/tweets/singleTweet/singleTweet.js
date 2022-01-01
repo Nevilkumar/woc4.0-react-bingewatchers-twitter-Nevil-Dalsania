@@ -4,7 +4,6 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTweets, likeTweets } from '../../../actions/tweetAction';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import moment from 'moment'
 import './singleTweet.css'
 import userImage from './default.png';

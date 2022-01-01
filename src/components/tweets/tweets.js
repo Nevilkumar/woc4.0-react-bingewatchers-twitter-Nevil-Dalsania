@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTweets } from '../../actions/tweetAction';
 import SingleTweet from './singleTweet/singleTweet.js';
+import { CircularProgress } from '@material-ui/core';
 import './tweets.css';
 
 const Tweets = ({currentId, setCurrentId}) => {
@@ -18,8 +19,8 @@ const Tweets = ({currentId, setCurrentId}) => {
         <div className='tweets-container'>
             {
                 !posts.length ? 
-                    <div className='tweet load-container'>
-                            Loading The Tweets
+                    <div className='load-container'>
+                        <CircularProgress color='secondary' size={50} />
                     </div>
                 : 
                     posts.map((post,id) => (

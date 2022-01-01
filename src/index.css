@@ -17,3 +17,8 @@ body{
 #root{
     width: 100vw;
 }
+
+.home-loading{
+    width: 40px;
+    margin: 50px auto;
+}

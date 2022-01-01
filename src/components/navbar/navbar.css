@@ -50,6 +50,11 @@
   background-color: #3D59AB;
 }
 
+.navbar .twitter-icon{
+  font-size: 25px;
+  margin-right: 10px;
+  
+}
 
 .navbar .logo {
   width: 30px;
@@ -59,6 +64,7 @@
 
 .navbar #active {
   display: flex;
+  align-items: center;
   background-color: #3D59AB;
   letter-spacing: 1.5px;
   text-transform: uppercase;

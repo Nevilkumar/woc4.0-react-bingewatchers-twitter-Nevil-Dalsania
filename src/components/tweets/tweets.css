@@ -7,4 +7,6 @@
 .load-container{
     font-size: 25px;
     margin:0px;
+    width: 700px;
+    text-align: center;
 }

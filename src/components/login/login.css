@@ -1,0 +1,90 @@
+
+.login{
+    background: #11101D;
+}
+
+.login form{
+    width: 520px;
+    margin-top: 30px;
+    background: #1d1b31;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 2px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255, 0.2);
+    border: 2px solid white;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 30px 25px;
+}
+.login form *{
+    color: #ffffff;
+    letter-spacing: 1.2px;
+    outline: none;
+    border: none;
+}
+.login form h3{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.login label{
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+.login input{
+    display: block;
+    height: 45px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.login ::placeholder{
+    color: #acacac;
+}
+.login button{
+    font-family: 'Work Sans', sans-serif;
+    margin-top: 40px;
+    width: 100%;
+    padding: 13px 0;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: #ffffff;
+    color: #080710;
+    font-weight: bolder;
+    transition: all 250ms ease-out;
+}
+.login button:hover{
+    background-color: rgb(9, 8, 18, 0.2);
+    color: #ffffff;
+    border: 2px solid white;
+    font-weight: normal;
+}
+
+.login .links{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.login .links a{
+    color: #1DA1F2;
+    text-decoration: none;
+    font-size: 18px;
+}

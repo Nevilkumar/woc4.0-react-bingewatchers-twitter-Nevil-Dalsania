@@ -1,0 +1,95 @@
+
+.navbar {
+    width: 100vw;
+}
+
+.navbar a {
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.navbar header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.navbar .topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3D59AB;
+  background-color: #1d1b31;
+  width: 90%;
+  height: 75px;
+  margin: auto;
+  box-shadow: 0px 6px 16px -6px rgba(1, 1, 1, 0.9);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navbar .topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 24px 35px;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  transition: 0.5s;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.navbar .topnav a:hover{
+  background-color: #3D59AB;
+}
+
+
+.navbar .logo {
+  width: 30px;
+  position: relative;
+  top: -5px;
+}
+
+.navbar #active {
+  display: flex;
+  background-color: #3D59AB;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.navbar .topnav .icon {
+  display: none;
+}
+
+.navbar .logout-btn{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  background-color: #1d1b31;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 24px 35px;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+  transition: 0.5s;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.navbar .logout-btn:hover{
+  background-color: #3D59AB;
+}
+
+.navbar .active{
+  background-color: #3D59AB;
+}

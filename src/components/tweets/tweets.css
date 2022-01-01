@@ -1,0 +1,10 @@
+.tweets-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.load-container{
+    font-size: 25px;
+    margin:0px;
+}

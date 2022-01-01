@@ -17,7 +17,7 @@ import UnProtectedRoutes from './components/privateRoutes/UnProtectedRoutes.js';
 import { CircularProgress } from '@material-ui/core';
 
 const App = () => {
-
+  
   const dispatch = useDispatch();
   const [check, setCheck] = useState(false);
   useEffect(() => {

@@ -3,10 +3,14 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteTweets } from '../../../actions/tweetAction';
+import { deleteTweets, likeTweets } from '../../../actions/tweetAction';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import moment from 'moment'
 import './singleTweet.css'
 import userImage from './default.png';
+import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
+
+
 
 const SingleTweet = ({tweet, setCurrentId}) => {
 
@@ -19,6 +23,17 @@ const SingleTweet = ({tweet, setCurrentId}) => {
     
     const user = useSelector(state => state.auth);
     
+
+    const Likes = () => {
+        return tweet.likes.find((like) => like === (user?.uid))
+        ? (
+            <RiThumbUpFill className="like-btn" fontSize={31} />
+        ) : (
+            <RiThumbUpLine className="like-btn" fontSize={31} />
+        );
+    };
+
+
     return (
         <div className='tweet'>
             <div className='content-title'>
@@ -39,6 +54,24 @@ const SingleTweet = ({tweet, setCurrentId}) => {
                 <p className='content'>{tweet?.tweet}</p>
                 <p className='content-date'>{timestamp}</p>
             </div>
+            {
+                user && 
+                <div className='likes-comments'>
+                    <div className='likes-container'>
+                        <button onClick={() => dispatch(likeTweets(tweet.tweetId))}>
+                            <Likes />
+                        </button>
+
+                        { tweet.likes.length>0 ?
+                            <p className='likes-number'>
+                                {tweet.likes.length} {tweet.likes.length === 1 ? 'Like' : 'Likes'}
+                            </p>
+                        :
+                            <p className='likes-number'>Like</p>
+                        }
+                    </div>
+                </div>
+            }
         </div>
     )
 }

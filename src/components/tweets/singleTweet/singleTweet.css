@@ -9,7 +9,7 @@
 }
 
 .content-title{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
 }
@@ -67,3 +67,31 @@
     font-size: 18px;
 }
 
+.likes-comments{
+    margin-top: 15px;
+}
+.likes-comments button{
+    background: transparent;    
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all 250ms ease-out;
+}
+
+.likes-comments button:hover{
+    filter: brightness(150%);
+    transform: scale(1.1);
+}
+/* Likes Section */
+.likes-container{
+    display: flex;
+    align-items: center;
+}
+.like-btn{
+    color: #3D59AB;
+}
+.likes-number{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}

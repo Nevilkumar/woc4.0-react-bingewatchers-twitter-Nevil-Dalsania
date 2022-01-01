@@ -10,6 +10,8 @@ const authReducer = (state = [], action) => {
             return state.filter((post) => post.tweetId !== action.data);
         case 'UPDATE_TWEETS':
             return state.map((post) => post.tweetId === action.data.tweetId ? {...post, tweet:action.data.tweet} : post);
+        case 'LIKE_TWEETS':
+            return state.map((post) => post.tweetId === action.data.tweetId ? {...post, likes:action.data.likes} : post);
         default:
             return state;
     }

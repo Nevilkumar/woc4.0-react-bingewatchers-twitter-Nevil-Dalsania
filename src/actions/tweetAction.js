@@ -8,7 +8,7 @@ export const createTweet = (data) => async(dispatch, getState) => {
             createdAt: Date.now(),
             likes: []
         }
-        const user = getState().auth;
+        const user = getState().auth.userInfo;
         const { uid } = user;
         const userData = await db.collection("users").where("uid", "==" ,uid).limit(1).get();
 
@@ -72,7 +72,7 @@ export const updateTweets = (id, data) => async(dispatch, getState) => {
 export const likeTweets = (tweetId) => async(dispatch, getState) => {
 
     try {
-        const user = getState().auth;
+        const user = getState().auth.userInfo;
         const { uid } = user;
 
         let res = await db.collection("Tweets").doc(tweetId).get();

@@ -1,0 +1,53 @@
+.userlist{
+    width: 340px;
+    height: calc(98vh - 100px);
+    margin-right: 20px;
+    overflow: scroll;
+    background-color: #1d1b31;
+    border-radius: 4px;
+}
+
+.userlist h2{
+    text-align: center;
+    margin: 15px 0px;
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 24px;
+    letter-spacing: 1.5px;
+}
+
+.userlist .profile-container{
+    width: 100%;
+    padding: 10px 25px;
+    border: 5px sold white;
+    display: flex;
+    align-items: center;
+}
+.userlist .profile-image{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+.userlist .profile-container a{
+    text-decoration: none;
+    color: #1DA1F2;
+    font-size: 24px;
+    text-align: left;
+}   
+.userlist .profile-container .follow-btn{
+    width: 80px;
+    font-size: 16px;
+    padding: 5px;
+    justify-self: flex-end;
+    margin-left: auto;
+    background-color: #3f51b5;
+    color: white;
+    letter-spacing: 1.2px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 250ms ease-out;
+}
+.userlist .profile-container .follow-btn:hover{
+    filter: brightness(150%);
+}

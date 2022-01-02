@@ -8,7 +8,8 @@ import moment from 'moment'
 import './singleTweet.css'
 import userImage from './default.png';
 import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
-
+import { CgMaximizeAlt } from 'react-icons/cg';
+import sample from './sample1.jpg'
 
 
 const SingleTweet = ({tweet, setCurrentId}) => {
@@ -20,7 +21,7 @@ const SingleTweet = ({tweet, setCurrentId}) => {
     const tmp = tweet?.createdAt;
     timestamp = moment(tmp).format('MMM Do YYYY, h:mm:ss a');
     
-    const user = useSelector(state => state.auth);
+    const user = useSelector(state => state.auth.userInfo);
     
 
     const Likes = () => {
@@ -32,7 +33,7 @@ const SingleTweet = ({tweet, setCurrentId}) => {
         );
     };
 
-
+    let tweetLink = "/tweet/" + tweet.tweetId;
     return (
         <div className='tweet'>
             <div className='content-title'>
@@ -40,15 +41,19 @@ const SingleTweet = ({tweet, setCurrentId}) => {
                     <img className='profile-image' src={userImage} alt='profile' />
                     <Link to='#'>@{tweet?.name}</Link>
                 </div>
-                {
-                    (user?.uid === tweet?.uid) &&
+                <div>
+                    <Link to={tweetLink}><CgMaximizeAlt className='admin-btn' /></Link>
+                    {
+                        (user?.uid === tweet?.uid) &&
 
-                    <div>
-                        <AiOutlineEdit className='admin-btn admin-edit-btn' onClick={() => setCurrentId(tweet.tweetId)} />
-                        <RiDeleteBin5Fill className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} />
-                    </div>
-                } 
+                        <>
+                            <AiOutlineEdit className='admin-btn admin-edit-btn' onClick={() => setCurrentId(tweet.tweetId)} />
+                            <RiDeleteBin5Fill className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} />
+                        </>
+                    } 
+                </div>
             </div>
+            <img className='tweet-image' src={sample} alt="sample" />
             <div className='content-container'>
                 <p className='content'>{tweet?.tweet}</p>
                 <p className='content-date'>{timestamp}</p>

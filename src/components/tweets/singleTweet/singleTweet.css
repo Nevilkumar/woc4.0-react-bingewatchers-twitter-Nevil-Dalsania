@@ -1,30 +1,30 @@
 .tweet{
-    width: 700px;
+    width: 600px;
     color: white;
     background-color: #1d1b31;
     word-wrap: break-word;
     margin-bottom: 15px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
-.content-title{
+.tweet .content-title{
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
 }
-.profile-container{
+.tweet .profile-container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.profile-image{
+.tweet .profile-image{
     width: 37px;
     height: 35px;
     margin-right: 10px;
 }
 
-.content-title a{
+.tweet .content-title a{
     font-size: 23px;
     font-weight: normal;
     letter-spacing: 1.2px;
@@ -32,45 +32,52 @@
     text-decoration: none;
 }
 
-.admin-btn{
+.tweet .admin-btn{
     font-size: 33px;
     cursor: pointer;
     margin-right: 15px;
     transition: all 250ms ease-in-out;
 }
 
-.admin-btn:hover{
+.tweet .admin-btn:hover{
     filter: brightness(150%);
     transform: scale(1.1);
 }
 
-.admin-delete-btn{
+.tweet .admin-delete-btn{
     color: #F44336;
 }
-.admin-edit-btn{
+.tweet .admin-edit-btn{
     color: #4CAF50;
 }
 
-.content-container{
+
+.tweet .tweet-image{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.tweet .content-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.content{
+.tweet .content{
     font-size: 19px;
     line-height: 1.2;
     margin-bottom: 15px;
 }
 
-.content-date{
+.tweet .content-date{
     font-size: 18px;
 }
 
-.likes-comments{
+.tweet .likes-comments{
     margin-top: 15px;
 }
-.likes-comments button{
+.tweet .likes-comments button{
     background: transparent;    
     cursor: pointer;
     outline: none;
@@ -78,19 +85,19 @@
     transition: all 250ms ease-out;
 }
 
-.likes-comments button:hover{
+.tweet .likes-comments button:hover{
     filter: brightness(150%);
     transform: scale(1.1);
 }
 /* Likes Section */
-.likes-container{
+.tweet .likes-container{
     display: flex;
     align-items: center;
 }
-.like-btn{
+.tweet .like-btn{
     color: #3D59AB;
 }
-.likes-number{
+.tweet .likes-number{
     font-size: 20px;
     letter-spacing: 1px;
     margin-left: 10px;

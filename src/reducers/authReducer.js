@@ -1,13 +1,21 @@
 
-const authReducer = (state = null, action) => {
+let initial_state = {
+    userInfo: null,
+    error: null,
+    loading: false,
+};
+
+const authReducer = (state = initial_state, action) => {
     switch(action.type){
         case 'SIGN_IN':
         case 'SIGN_UP':
-            return action.data;
+            return {...state, userInfo: action.data, loading:false};
         case 'LOGOUT':
-            return null;
+            return {...state, userInfo: null};
         case 'SET_USER':
-            return action.data;
+            return {...state, userInfo: action.data};
+        case 'CLEAR_ERROR':
+            return {...state, error:null}
         default:
             return state;
     }

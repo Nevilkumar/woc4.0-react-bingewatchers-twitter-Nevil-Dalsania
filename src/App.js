@@ -15,6 +15,8 @@ import { setUser } from './actions/authAction.js';
 import PrivateRoutes from './components/privateRoutes/PrivateRoutes.js';
 import UnProtectedRoutes from './components/privateRoutes/UnProtectedRoutes.js';
 import { CircularProgress } from '@material-ui/core';
+import TweetDesc from './components/TweetDesc/TweetDesc.js';
+import { fetchUsers } from './actions/userAction.js';
 
 const App = () => {
   
@@ -34,6 +36,10 @@ const App = () => {
     })
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch])
+
   return (
     !check ? <div className='home-loading'><CircularProgress color='secondary' size={80} /></div> :
     <>   
@@ -41,6 +47,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/tweet/:id" element={<TweetDesc />} />
           <Route exact path="/" element={<PrivateRoutes />} >
             <Route exact path="/profile" element={<Profile />} />
           </Route>

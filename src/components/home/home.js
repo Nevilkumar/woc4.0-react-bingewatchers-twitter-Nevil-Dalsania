@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { createTweet, updateTweets } from '../../actions/tweetAction';
 import Tweets from '../tweets/tweets.js';
+import UserList from '../UserList/UserList';
 import './home.css';
 
 const Home = () => {
@@ -9,8 +10,8 @@ const Home = () => {
 
     const [currentId, setCurrentId] = useState(null);
     const [text, setText] = useState("")
-    const user = useSelector((state) => state.auth);
-
+    const user = useSelector((state) => state.auth.userInfo);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if(currentId)
@@ -36,13 +37,14 @@ const Home = () => {
     return (
         
         <div className='home'>
+            <UserList />
             <Tweets currentId={currentId} setCurrentId={setCurrentId} />
             
             { 
                 user ? ( 
                 <div className='input-tweet'>
                     <form onSubmit={handleSubmit} >
-                        <textarea spellCheck="false" value={text} rows="10" cols={30} onChange={(e) => setText(e.target.value)}></textarea>
+                        <textarea spellCheck="false" value={text} rows="10" cols={27} onChange={(e) => setText(e.target.value)}></textarea>
                         <button type='submit'>{currentId ? "Update Tweet"  : "Tweet" }</button>
                         <button className='reset-btn' type='reset' onClick={handleReset}>Reset</button>
                     </form>

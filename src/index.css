@@ -23,6 +23,9 @@ body{
     margin: 50px auto;
 }
 
+button{
+    transition: all 250ms ease-out;
+}
 button:hover{
     filter: brightness(150%);
 }

@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
 import './EditTweet.css';
-import { useParams } from 'react-router';
-
+import { useNavigate, useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTweets } from '../../actions/tweetAction';
 
 const EditTweet = () => {
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const { editId } = useParams();
-    const [editedText, setEditedText] = useState("")
+
+    const CurrentTweet = useSelector(state => state.post.filter((p) => p.tweetId === editId));
+    console.log(CurrentTweet);
+
+    const [editedText, setEditedText] = useState(CurrentTweet[0].tweet);
+
 
     const handleEditChange = () => {
-
+            dispatch(updateTweets(editId, editedText));
+            navigate('/');
     };
 
     return (

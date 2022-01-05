@@ -1,0 +1,24 @@
+.individual-comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #1d1b31;
+    word-wrap: break-word;
+}
+
+.individual-comment .comment-user{
+    color: #1DA1F2;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.individual-comment .comment-content{
+    font-size: 22px;
+    color: white;
+    font-weight: normal;
+    margin-top: 8px;
+}

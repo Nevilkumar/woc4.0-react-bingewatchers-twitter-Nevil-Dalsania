@@ -1,23 +1,40 @@
 import {db} from "../firebaseConfig";
 
-export const createTweet = (data) => async(dispatch, getState) => {
+export const createComment = (tweetId, data) => async(dispatch, getState) => {
 
     try {
-        let content = {
-            tweet: data,
-            createdAt: Date.now(),
-            likes: []
-        }
         const user = getState().auth.userInfo;
         const { uid } = user;
-        const userData = await db.collection("users").where("uid", "==" ,uid).limit(1).get();
+        let content = {
+            comment: data,
+            uid: uid,
+            tweetId: tweetId,
+            createdAt: Date.now(),
+        }
 
-        userData.forEach((p) => content = {...content, ...p.data()})
-
-        const res = await db.collection('Tweets').add(content);
+        const res = await db.collection('Comments').add(content);
         const { id } = res;
 
-        dispatch({ type: 'CREATE_TWEET', data: { ...content, tweetId: id}});  
+        dispatch({ type: 'CREATE_COMMENT', data: { ...content, commentId: id}});  
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+
+export const fetchComment = () => async(dispatch, getState) => {
+
+    try {
+        let allComments = [];
+        const res = await db.collection("Comments").orderBy('createdAt', 'desc').get();
+        
+        res.forEach((p) => {
+            allComments.push({ ...p.data(), commentId: p.id });
+        });
+
+        dispatch({ type: 'FETCH_COMMENT', data: allComments}); 
 
     } catch (error) {
         console.log(error);

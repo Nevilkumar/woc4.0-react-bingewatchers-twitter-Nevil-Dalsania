@@ -43,3 +43,12 @@
     color: white;
     letter-spacing: 1.2px;
 }
+
+.single-tweet-section .display-comment-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    word-wrap: break-word;
+
+}

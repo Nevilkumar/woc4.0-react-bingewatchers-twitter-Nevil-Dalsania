@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import userImage from '../tweets/singleTweet/default.png';
 import sample from '../tweets/singleTweet/sample1.jpg';
 import moment from 'moment';
 import './TweetDesc.css'
+import { createComment } from '../../actions/commentsAction';
+import SingleComment from './SingleComment/SingleComment';
 
 const TweetDesc = () => {
 
+    const dispatch = useDispatch();
     const { id } = useParams();
     let urlTweetId = id;
 
     const data = useSelector(state => state.post);
+    const allComments = useSelector(state => state.comment.filter((p) => p.tweetId === urlTweetId));
+    console.log(allComments);
 
     let CurrentTweet = data.find(p => p?.tweetId === urlTweetId)
     let profileLink = "/profile/" + CurrentTweet?.uid;
@@ -21,6 +26,13 @@ const TweetDesc = () => {
 
     const tmp = CurrentTweet?.createdAt;
     timestamp = moment(tmp).format('MMM Do YYYY, h:mm:ss a');
+
+
+    const [cmnt, setCmnt] = useState("");
+    const handleComment = () => {
+        dispatch(createComment(urlTweetId, cmnt));
+        setCmnt("");
+    }
 
     return (
     <>
@@ -43,8 +55,15 @@ const TweetDesc = () => {
             </div>
 
             <div className='comment-input-div'>
-                <input type="text" />
-                <button>Comment</button>
+                <input type="text" value={cmnt} onChange={(e) => setCmnt(e.target.value)} />
+                <button onClick={handleComment}>Comment</button>
+            </div>
+
+            <div className='display-comment-section'>
+                {
+                    allComments &&
+                    allComments.map((c, id) => <SingleComment key={id} data={c} />)
+                }
             </div>
         </div>
     </>

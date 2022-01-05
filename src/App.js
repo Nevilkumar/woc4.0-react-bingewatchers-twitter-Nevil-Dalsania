@@ -19,6 +19,7 @@ import TweetDesc from './components/TweetDesc/TweetDesc.js';
 import { fetchUsers } from './actions/userAction.js';
 import { fetchTweets } from './actions/tweetAction.js';
 import EditTweet from './components/EditTweet/EditTweet.js';
+import { fetchComment } from './actions/commentsAction.js';
 
 const App = () => {
   
@@ -41,6 +42,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchUsers());
     dispatch(fetchTweets());
+    dispatch(fetchComment());
   }, [dispatch])
 
 

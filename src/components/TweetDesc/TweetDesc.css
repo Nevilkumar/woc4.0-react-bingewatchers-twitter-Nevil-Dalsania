@@ -1,6 +1,45 @@
+.single-tweet-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .full-tweet{
-    margin-top: 120px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.single-tweet-section .comment-input-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    margin-bottom: 40px;
+}
+
+.single-tweet-section .comment-input-div input{
+    width: 600px;
+    height: 38px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    background: #e7f0ed;
+}
+
+.single-tweet-section .comment-input-div button{
+    outline: none;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #3D59AB;
+    color: white;
+    letter-spacing: 1.2px;
 }

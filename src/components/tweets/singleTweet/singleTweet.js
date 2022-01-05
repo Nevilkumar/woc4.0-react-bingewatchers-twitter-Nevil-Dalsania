@@ -11,8 +11,7 @@ import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
 import { CgMaximizeAlt } from 'react-icons/cg';
 import sample from './sample1.jpg'
 
-
-const SingleTweet = ({tweet, setCurrentId}) => {
+const SingleTweet = ({tweet}) => {
 
     const dispatch = useDispatch();
 
@@ -25,7 +24,7 @@ const SingleTweet = ({tweet, setCurrentId}) => {
     
 
     const Likes = () => {
-        return tweet.likes.find((like) => like === (user?.uid))
+        return tweet?.likes.find((like) => like === (user?.uid))
         ? (
             <RiThumbUpFill className="like-btn" fontSize={31} />
         ) : (
@@ -33,13 +32,16 @@ const SingleTweet = ({tweet, setCurrentId}) => {
         );
     };
 
-    let tweetLink = "/tweet/" + tweet.tweetId;
+    let tweetLink = "/tweet/" + tweet?.tweetId;
+    let profileLink = "/profile/" + tweet?.uid;
+    let editLink = "/edit/" + tweet?.tweetId;
+
     return (
         <div className='tweet'>
             <div className='content-title'>
                 <div className='profile-container'>
                     <img className='profile-image' src={userImage} alt='profile' />
-                    <Link to='#'>@{tweet?.name}</Link>
+                    <Link to={profileLink}>@{tweet?.name}</Link>
                 </div>
                 <div>
                     <Link to={tweetLink}><CgMaximizeAlt className='admin-btn' /></Link>
@@ -47,13 +49,13 @@ const SingleTweet = ({tweet, setCurrentId}) => {
                         (user?.uid === tweet?.uid) &&
 
                         <>
-                            <AiOutlineEdit className='admin-btn admin-edit-btn' onClick={() => setCurrentId(tweet.tweetId)} />
+                            <Link to={editLink}><AiOutlineEdit className='admin-btn admin-edit-btn' /></Link>
                             <RiDeleteBin5Fill className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} />
                         </>
                     } 
                 </div>
             </div>
-            <img className='tweet-image' src={sample} alt="sample" />
+            {/* <img className='tweet-image' src={sample} alt="sample" /> */}
             <div className='content-container'>
                 <p className='content'>{tweet?.tweet}</p>
                 <p className='content-date'>{timestamp}</p>
@@ -66,9 +68,9 @@ const SingleTweet = ({tweet, setCurrentId}) => {
                             <Likes />
                         </button>
 
-                        { tweet.likes.length>0 ?
+                        { tweet?.likes.length>0 ?
                             <p className='likes-number'>
-                                {tweet.likes.length} {tweet.likes.length === 1 ? 'Like' : 'Likes'}
+                                {tweet?.likes.length} {tweet?.likes.length === 1 ? 'Like' : 'Likes'}
                             </p>
                         :
                             <p className='likes-number'>Like</p>

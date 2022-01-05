@@ -1,0 +1,30 @@
+.edit-section{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-section textarea{
+    padding: 10px;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: #e7f0ed;
+    resize: none;
+}
+
+.edit-section button{
+    border: none;
+    outline: none;
+    font-size: 22px;    
+    padding: 12px 25px;
+    margin: 15px 0px;
+    cursor: pointer;
+    background: #3D59AB;
+    color: white;
+    border-radius: 4px;
+    transition: all 250ms ease-out;
+}

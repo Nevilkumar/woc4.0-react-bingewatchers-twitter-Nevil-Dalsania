@@ -22,3 +22,7 @@ body{
     width: 40px;
     margin: 50px auto;
 }
+
+button:hover{
+    filter: brightness(150%);
+}

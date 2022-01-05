@@ -1,30 +1,23 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTweets } from '../../actions/tweetAction';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import SingleTweet from './singleTweet/singleTweet.js';
 import { CircularProgress } from '@material-ui/core';
 import './tweets.css';
 
-const Tweets = ({currentId, setCurrentId}) => {
+const Tweets = () => {
 
     const posts = useSelector((state) => state.post);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchTweets());
-    }, [])
-
 
     return (
         <div className='tweets-container'>
             {
                 !posts.length ? 
                     <div className='load-container'>
-                        <CircularProgress color='secondary' size={50} />
+                        <CircularProgress color='secondary' size={60} />
                     </div>
                 : 
                     posts.map((post,id) => (
-                            <SingleTweet key={id} tweet={post} setCurrentId={setCurrentId} />
+                            <SingleTweet key={id} tweet={post} />
                     ))
             }
         </div>

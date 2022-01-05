@@ -19,6 +19,7 @@ const Navbar = () => {
         dispatch(logout(navigate));
     }
 
+    let profileLink = "/profile/" + user?.uid;
     return (
        
         <div className='navbar'>
@@ -31,7 +32,7 @@ const Navbar = () => {
                         {
                             user ? (
                             <>
-                                <NavLink to="/profile" >Profile</NavLink>
+                                <NavLink to={profileLink} >Profile</NavLink>
                                 <button className='logout-btn' onClick={handleLogout}>Logout</button>
                             </>
                             ) : (

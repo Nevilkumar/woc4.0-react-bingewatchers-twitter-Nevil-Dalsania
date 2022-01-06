@@ -5,7 +5,7 @@ let initial_state = {
     loading: false,
 };
 
-const authReducer = (state = initial_state, action) => {
+const AuthReducer = (state = initial_state, action) => {
     switch(action.type){
         case 'SIGN_IN':
         case 'SIGN_UP':
@@ -21,4 +21,4 @@ const authReducer = (state = initial_state, action) => {
     }
 }
 
-export default authReducer
+export default AuthReducer

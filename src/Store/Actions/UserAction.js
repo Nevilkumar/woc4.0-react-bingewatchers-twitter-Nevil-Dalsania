@@ -1,4 +1,4 @@
-import {db} from "../firebaseConfig";
+import {db} from "../../firebaseConfig";
 
 export const fetchUsers = () => async(dispatch, getState) => {
 

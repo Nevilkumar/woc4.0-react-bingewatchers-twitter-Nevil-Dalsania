@@ -1,4 +1,4 @@
-import {auth, db} from "../firebaseConfig";
+import {auth, db} from "../../firebaseConfig";
 
 export const signIn = (data, navigate) => async(dispatch, getState) => {
     try {

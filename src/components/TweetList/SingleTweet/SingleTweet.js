@@ -1,15 +1,18 @@
 import React from 'react'
 import { AiOutlineEdit } from 'react-icons/ai';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { CgMaximizeAlt } from 'react-icons/cg';
+import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
+import { FaComment } from 'react-icons/fa';
+
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteTweets, likeTweets } from '../../../actions/tweetAction';
 import moment from 'moment'
-import './singleTweet.css'
-import userImage from './default.png';
-import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
-import { CgMaximizeAlt } from 'react-icons/cg';
-import sample from './sample1.jpg'
+
+import sample from '../../Images/sample1.jpg';
+import userImage from '../../Images/default.png';
+import './SingleTweet.css'
+import { deleteTweets, likeTweets } from '../../../Store/Actions/TweetAction';
 
 const SingleTweet = ({tweet}) => {
 
@@ -21,7 +24,7 @@ const SingleTweet = ({tweet}) => {
     timestamp = moment(tmp).format('MMM Do YYYY, h:mm:ss a');
     
     const user = useSelector(state => state.auth.userInfo);
-    
+    const comments = useSelector(state => state.comment.filter((p) => p.tweetId === tweet?.tweetId));
 
     const Likes = () => {
         return tweet?.likes.find((like) => like === (user?.uid))
@@ -75,6 +78,11 @@ const SingleTweet = ({tweet}) => {
                         :
                             <p className='likes-number'>Like</p>
                         }
+                    </div>
+
+                    <div className='comments-container'>
+                        <Link to={tweetLink}><FaComment className='comment-btn' fontSize={31} /></Link>
+                        <p className='comments-number'>{comments.length}</p>
                     </div>
                 </div>
             }

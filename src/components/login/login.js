@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import './login.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearError, signIn } from '../../actions/authAction';
 import { useNavigate } from 'react-router';
-import { CircularProgress } from '@material-ui/core';
+
+import './Login.css';
+import { clearError, signIn } from '../../Store/Actions/AuthAction';
 
 const Login = () => {
 
@@ -12,7 +12,6 @@ const Login = () => {
     const dispatch = useDispatch();
     const error = useSelector(state => state.auth.error);
 
-    const [loading, setLoading] = useState(false);
     const [details, setDetails] = useState({
         email: '',
         password: ''
@@ -20,9 +19,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setLoading(true);
         dispatch(signIn(details, navigate));
-        setLoading(false);
     }
 
     const handleChange = (e) => {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { createTweet } from '../../actions/tweetAction';
-import Tweets from '../tweets/tweets.js';
+
+import './Home.css';
+import { createTweet } from '../../Store/Actions/TweetAction';
+import TweetList from '../TweetList/TweetList';
 import UserList from '../UserList/UserList';
-import './home.css';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const Home = () => {
         
         <div className='home'>
             <UserList />
-            <Tweets />
+            <TweetList />
             
             { 
                 user ? ( 

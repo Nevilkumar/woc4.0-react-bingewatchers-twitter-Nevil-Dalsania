@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import './profile.css'
-import profile from './default.png';
-import { MdCloudUpload } from 'react-icons/md'
+import React from 'react';
+import { MdCloudUpload } from 'react-icons/md';
 import { CircularProgress } from '@material-ui/core';
-import { useSelector } from 'react-redux';
-import SingleTweet from '../tweets/singleTweet/singleTweet';
 import { useParams } from 'react-router';
-import '../tweets/tweets.css';
+import { useSelector } from 'react-redux';
+
+import './Profile.css';
+import profile from '../Images/default.png';
+import SingleTweet from '../TweetList/SingleTweet/SingleTweet';
+import '../TweetList/TweetList.css';
 
 const Profile = () => {
 

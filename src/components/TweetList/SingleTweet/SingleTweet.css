@@ -76,6 +76,9 @@
 
 .tweet .likes-comments{
     margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .tweet .likes-comments button{
     background: transparent;    
@@ -90,6 +93,7 @@
     transform: scale(1.1);
 }
 /* Likes Section */
+
 .tweet .likes-container{
     display: flex;
     align-items: center;
@@ -101,4 +105,28 @@
     font-size: 20px;
     letter-spacing: 1px;
     margin-left: 10px;
+}
+/* Comments container */
+
+.tweet .comments-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.tweet .comment-btn{
+    color: #3D59AB;
+    transition: all 250ms ease-out;
+}
+
+.tweet .comments-number{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    padding-bottom: 4px;
+}
+
+.tweet .comment-btn:hover{
+    transform: scale(1.1);
+    filter: brightness(150%);
 }

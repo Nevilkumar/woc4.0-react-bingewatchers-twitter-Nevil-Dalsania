@@ -1,25 +1,25 @@
-// Components Import
-import Signup from './components/signup/signup.js';
-import Login from './components/login/login.js';
-import Home from './components/home/home.js';
-import Navbar from './components/navbar/navbar.js';
-import Profile from './components/profile/profile.js'
-import './index.css';
-
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { auth } from './firebaseConfig.js';
-
-import { setUser } from './actions/authAction.js';
-import PrivateRoutes from './components/privateRoutes/PrivateRoutes.js';
-import UnProtectedRoutes from './components/privateRoutes/UnProtectedRoutes.js';
 import { CircularProgress } from '@material-ui/core';
-import TweetDesc from './components/TweetDesc/TweetDesc.js';
-import { fetchUsers } from './actions/userAction.js';
-import { fetchTweets } from './actions/tweetAction.js';
+
+// Components Import
+import Signup from './components/Signup/Signup.js';
+import Login from './components/Login/Login.js';
+import Home from './components/Home/Home.js';
+import Navbar from './components/Navbar/Navbar.js';
+import Profile from './components/Profile/Profile.js'
 import EditTweet from './components/EditTweet/EditTweet.js';
-import { fetchComment } from './actions/commentsAction.js';
+import './index.css';
+
+import { auth } from './firebaseConfig.js';
+import { setUser } from './Store/Actions/AuthAction.js';
+import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes.js';
+import UnProtectedRoutes from './components/PrivateRoutes/UnProtectedRoutes.js';
+import TweetDesc from './components/TweetDesc/TweetDesc.js';
+import { fetchUsers } from './Store/Actions/UserAction.js';
+import { fetchTweets } from './Store/Actions/TweetAction.js';
+import { fetchComment } from './Store/Actions/CommentAction.js';
 
 const App = () => {
   
@@ -37,15 +37,12 @@ const App = () => {
         setCheck(true);
       }
     })
-  }, [dispatch]);
 
-  useEffect(() => {
     dispatch(fetchUsers());
     dispatch(fetchTweets());
     dispatch(fetchComment());
-  }, [dispatch])
 
-
+  }, [dispatch]);
 
   return (
     !check ? <div className='home-loading'><CircularProgress color='secondary' size={80} /></div> :

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { NavLink} from 'react-router-dom';
-import './navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../actions/authAction';
 import { useNavigate } from 'react-router';
 import { BsTwitter } from 'react-icons/bs';
+
+import './Navbar.css';
+import { logout } from '../../Store/Actions/AuthAction';
 
 const Navbar = () => {
 

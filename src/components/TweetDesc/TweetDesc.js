@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import userImage from '../tweets/singleTweet/default.png';
-import sample from '../tweets/singleTweet/sample1.jpg';
 import moment from 'moment';
+
 import './TweetDesc.css'
-import { createComment } from '../../actions/commentsAction';
+import userImage from '../Images/default.png';
+import sample from '../Images/sample1.jpg';
+import { createComment } from '../../Store/Actions/CommentAction';
 import SingleComment from './SingleComment/SingleComment';
 
 const TweetDesc = () => {

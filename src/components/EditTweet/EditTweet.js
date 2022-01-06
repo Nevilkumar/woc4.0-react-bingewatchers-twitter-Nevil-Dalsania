@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import './EditTweet.css';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateTweets } from '../../actions/tweetAction';
+
+import './EditTweet.css';
+import { updateTweets } from '../../Store/Actions/TweetAction';
 
 const EditTweet = () => {
 

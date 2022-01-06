@@ -1,7 +1,8 @@
 import React from 'react';
-import './SingleComment.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import './SingleComment.css';
 
 const SingleComment = ({data}) => {
 

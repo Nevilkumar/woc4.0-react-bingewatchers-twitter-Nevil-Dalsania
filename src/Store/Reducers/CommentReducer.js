@@ -1,5 +1,5 @@
 
-const commentsReducer = (state = [], action) => {
+const CommentReducer = (state = [], action) => {
 
     switch(action.type){
         case 'CREATE_COMMENT':
@@ -11,4 +11,4 @@ const commentsReducer = (state = [], action) => {
     }
 }
 
-export default commentsReducer
+export default CommentReducer

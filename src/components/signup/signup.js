@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { clearError, signUp } from '../../actions/authAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { CircularProgress } from '@material-ui/core';
-import './signup.css';
+
+import './Signup.css';
+import { clearError, signUp } from '../../Store/Actions/AuthAction';
 
 const Signup = () => {
 

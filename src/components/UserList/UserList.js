@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import userImage from './default.png';
 import { useSelector, useDispatch } from 'react-redux';
+
 import './UserList.css'
-import { fetchUsers } from '../../actions/userAction';
+import userImage from '../Images/default.png';
+import { fetchUsers } from '../../Store/Actions/UserAction'
 
 const UserList = () => {
 

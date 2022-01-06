@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import SingleTweet from './singleTweet/singleTweet.js';
 import { CircularProgress } from '@material-ui/core';
-import './tweets.css';
 
-const Tweets = () => {
+
+import './TweetList.css';
+import SingleTweet from './SingleTweet/SingleTweet';
+
+const TweetList = () => {
 
     const posts = useSelector((state) => state.post);
 
@@ -24,4 +26,4 @@ const Tweets = () => {
     )
 }
 
-export default Tweets
+export default TweetList

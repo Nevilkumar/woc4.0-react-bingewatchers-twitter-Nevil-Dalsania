@@ -1,5 +1,5 @@
 
-const authReducer = (state = [], action) => {
+const TweetReducer = (state = [], action) => {
 
     switch(action.type){
         case 'CREATE_TWEET':
@@ -17,4 +17,4 @@ const authReducer = (state = [], action) => {
     }
 }
 
-export default authReducer
+export default TweetReducer

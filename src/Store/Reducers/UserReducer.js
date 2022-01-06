@@ -1,5 +1,5 @@
 
-const userReducer = (state = [], action) => {
+const UserReducer = (state = [], action) => {
 
     switch(action.type){
         case 'FETCH_USERS':
@@ -9,4 +9,4 @@ const userReducer = (state = [], action) => {
     }
 }
 
-export default userReducer
+export default UserReducer

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdCloudUpload } from 'react-icons/md';
 import { CircularProgress } from '@material-ui/core';
 import { useParams } from 'react-router';
@@ -6,9 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './Profile.css';
 import '../TweetList/TweetList.css';
-import profile from '../Images/default.png';
 import SingleTweet from '../TweetList/SingleTweet/SingleTweet';
-import { uploadDP } from '../../Store/Actions/UserAction';
+import { uploadDP, followUnfollow, fetchUsers } from '../../Store/Actions/UserAction';
 
 
 const Profile = () => {
@@ -16,12 +15,10 @@ const Profile = () => {
     const dispatch = useDispatch();
     const { profileId } = useParams();
     const posts = useSelector((state) => state.post.filter((p) => p?.uid === profileId));
-    let userData = useSelector((state) => state.user.filter((p) => p?.uid === profileId))
-    userData = userData[0];
-    
-    console.log(userData);
-
+    let userData = useSelector((state) => state.user.filter((p) => p?.uid === profileId)[0])
+    const { uid } = useSelector((state) => state.auth.userInfo);
     const [photo, setPhoto] = useState(null);
+
 
     const handleImageChange = (e) => {
         if(e.target.files[0])
@@ -34,36 +31,49 @@ const Profile = () => {
         if(photo)
             dispatch(uploadDP(photo));
     }
+
+    const handleFollow = () => {
+        dispatch(followUnfollow(profileId));
+    }
     return (
         <div className='profile'>
             <div className='personal-info'>
                 <div className='image-container'>
                     <img className='main-profile-image' src={userData?.photoURL} alt="profile" />
 
-                    <div className="box">
-                        <label className='file-label'>
-                            <MdCloudUpload className='file-icon' />
-                            <input id="file-upload" type="file" className="profile-input-file" onChange={handleImageChange} />
-                        </label>
-                        <button onClick={handleImageUpload}>Update</button>
-                    </div>
+                    {
+                        uid === profileId && 
+
+                        <div className="box">
+                            <label className='file-label'>
+                                <MdCloudUpload className='file-icon' />
+                                <input id="file-upload" type="file" className="profile-input-file" onChange={handleImageChange} />
+                            </label>
+                            <button onClick={handleImageUpload}>Update</button>
+                        </div>
+
+                    }
 
                 </div>
-                <p className='mt-p'>nevil@gmail.com</p>
-                <p className='mt-p'>Nevil_268</p>
-                <button className='profile-follow-btn'>Following</button>
+                <p className='mt-p'>{userData?.email}</p>
+                <p className='mt-p mb-p'>{userData?.name}</p>
+
+                {
+                    uid !== profileId && 
+                    <button className='profile-follow-btn' onClick={handleFollow}>Following</button>
+                }
                 <div className='tweets-follower-section'>
                     <div className='tweets-follower-child-section'>
                         <p className='mt-p'>Tweets</p>
-                        <p className='mt-p'>3</p>
+                        <p className='mt-p'>{posts.length}</p>
                     </div>
                     <div className='tweets-follower-child-section'>
                         <p className='mt-p'>Followers</p>
-                        <p className='mt-p'>19</p>
+                        <p className='mt-p'>{userData?.followers.length}</p>
                     </div>
                     <div className='tweets-follower-child-section'>
                         <p className='mt-p'>Following</p>
-                        <p className='mt-p'>25</p>
+                        <p className='mt-p'>{userData?.following.length}</p>
                     </div>
                 </div>
             </div>

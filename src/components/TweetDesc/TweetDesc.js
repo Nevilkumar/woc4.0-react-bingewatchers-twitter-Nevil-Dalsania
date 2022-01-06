@@ -18,7 +18,6 @@ const TweetDesc = () => {
 
     const data = useSelector(state => state.post);
     const allComments = useSelector(state => state.comment.filter((p) => p.tweetId === urlTweetId));
-    console.log(allComments);
     
     
     let CurrentTweet = data.find(p => p?.tweetId === urlTweetId)

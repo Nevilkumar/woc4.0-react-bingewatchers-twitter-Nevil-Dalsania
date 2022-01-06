@@ -13,7 +13,6 @@ const EditTweet = () => {
     const { editId } = useParams();
 
     const CurrentTweet = useSelector(state => state.post.find((p) => p.tweetId === editId));
-    console.log(CurrentTweet);
 
     const [editedText, setEditedText] = useState(CurrentTweet?.tweet);
 

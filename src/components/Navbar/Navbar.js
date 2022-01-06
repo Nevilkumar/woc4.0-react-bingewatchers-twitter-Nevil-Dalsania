@@ -13,8 +13,6 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const user = useSelector((state) => state.auth.userInfo);
-    // console.log(user);
-
 
     const handleLogout = () => {
         dispatch(logout(navigate));

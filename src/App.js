@@ -51,15 +51,18 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/tweet/:id" element={<TweetDesc />} />
-          <Route exact path="/edit/:editId" element={<EditTweet />} />
+
           <Route exact path="/" element={<PrivateRoutes />} >
+            <Route exact path="/edit/:editId" element={<EditTweet />} />
+            <Route exact path="/tweet/:id" element={<TweetDesc />} />
             <Route exact path="/profile/:profileId" element={<Profile />} />
           </Route>
+
           <Route exact path="/" element={<UnProtectedRoutes />} >
             <Route exact path="login" element={<Login />} />
             <Route exact path="signup" element={<Signup />} />
           </Route>
+
         </Routes>
     </BrowserRouter>
     </>

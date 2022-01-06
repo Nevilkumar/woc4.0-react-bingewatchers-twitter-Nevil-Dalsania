@@ -7,6 +7,11 @@
     border-radius: 4px;
 }
 
+.userList-load-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
 .userlist h2{
     text-align: center;
     margin: 15px 0px;

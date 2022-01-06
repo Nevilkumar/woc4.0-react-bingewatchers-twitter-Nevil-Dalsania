@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,12 +12,14 @@ const EditTweet = () => {
 
     const { editId } = useParams();
 
-    const CurrentTweet = useSelector(state => state.post.filter((p) => p.tweetId === editId));
+    const CurrentTweet = useSelector(state => state.post.find((p) => p.tweetId === editId));
     console.log(CurrentTweet);
 
-    const [editedText, setEditedText] = useState(CurrentTweet[0].tweet);
+    const [editedText, setEditedText] = useState(CurrentTweet?.tweet);
 
-
+    useEffect(() => {
+        setEditedText(CurrentTweet?.tweet)
+    }, [CurrentTweet])
     const handleEditChange = () => {
             dispatch(updateTweets(editId, editedText));
             navigate('/');

@@ -14,6 +14,7 @@ const Profile = () => {
     const { profileId } = useParams();
     const posts = useSelector((state) => state.post.filter((p) => p?.uid === profileId));
 
+
     return (
         <div className='profile'>
             <div className='personal-info'>

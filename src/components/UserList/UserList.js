@@ -30,7 +30,7 @@ const UserList = () => {
                 : 
                 usersList.map((p,id) => (
                     <div key={id} className='profile-container'>
-                        <img className='profile-image' src={userImage} alt='profile' />
+                        <img className='profile-image' src={p.photoURL} alt='profile' />
                         <Link to={`/profile/${p.uid}`}>@{p.name}</Link>
                         <button className='follow-btn'>Follow</button>
                     </div>

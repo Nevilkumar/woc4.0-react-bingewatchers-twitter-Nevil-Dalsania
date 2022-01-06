@@ -19,8 +19,12 @@ const TweetDesc = () => {
     const data = useSelector(state => state.post);
     const allComments = useSelector(state => state.comment.filter((p) => p.tweetId === urlTweetId));
     console.log(allComments);
-
+    
+    
     let CurrentTweet = data.find(p => p?.tweetId === urlTweetId)
+    const profileUser = useSelector(state => state.user.find((p) => p?.uid === CurrentTweet?.uid))
+
+
     let profileLink = "/profile/" + CurrentTweet?.uid;
 
     let timestamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(CurrentTweet?.createdAt);
@@ -43,7 +47,7 @@ const TweetDesc = () => {
                 <div className='tweet'>
                     <div className='content-title'>
                         <div className='profile-container'>
-                            <img className='profile-image' src={userImage} alt='profile' />
+                            <img className='profile-image' src={profileUser?.photoURL} alt='profile' />
                             <Link to={profileLink}>@{CurrentTweet?.name}</Link>
                         </div>
                     </div>

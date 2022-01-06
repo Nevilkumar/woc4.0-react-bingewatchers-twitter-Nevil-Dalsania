@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment'
 
 import sample from '../../Images/sample1.jpg';
-import userImage from '../../Images/default.png';
 import './SingleTweet.css'
 import { deleteTweets, likeTweets } from '../../../Store/Actions/TweetAction';
 
@@ -25,6 +24,8 @@ const SingleTweet = ({tweet}) => {
     
     const user = useSelector(state => state.auth.userInfo);
     const comments = useSelector(state => state.comment.filter((p) => p.tweetId === tweet?.tweetId));
+    const profileUser = useSelector(state => state.user.find((p) => p?.uid === tweet?.uid))
+
 
     const Likes = () => {
         return tweet?.likes.find((like) => like === (user?.uid))
@@ -43,7 +44,7 @@ const SingleTweet = ({tweet}) => {
         <div className='tweet'>
             <div className='content-title'>
                 <div className='profile-container'>
-                    <img className='profile-image' src={userImage} alt='profile' />
+                    <img className='profile-image' src={profileUser?.photoURL} alt='profile' />
                     <Link to={profileLink}>@{tweet?.name}</Link>
                 </div>
                 <div>

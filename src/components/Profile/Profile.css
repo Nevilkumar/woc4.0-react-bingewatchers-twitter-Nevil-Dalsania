@@ -28,6 +28,7 @@
     width: 150px;
     height: 150px;
     margin-bottom: 15px;
+    border-radius: 100%;
 }
 
 /* CSS for file input */

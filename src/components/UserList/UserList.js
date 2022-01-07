@@ -44,11 +44,16 @@ const UserList = () => {
                     <div key={id} className='profile-container'>
                         <img className='profile-image' src={p.photoURL} alt='profile' />
                         <Link to={`/profile/${p.uid}`}>@{p.name}</Link>
-                        <button className='follow-btn' onClick={() => handleFollow(p.uid)}>
-                            {
-                                t && t.findIndex(x => x === p.uid) === -1 ? "Follow" : "Following"
-                            }
-                        </button>
+
+                        {
+                            currentUser && 
+
+                            <button className='follow-btn' onClick={() => handleFollow(p.uid)}>
+                                {
+                                    t && t.findIndex(x => x === p.uid) === -1 ? "Follow" : "Following"
+                                }
+                            </button>
+                        }
                     </div>
                 ))
             }

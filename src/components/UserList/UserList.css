@@ -1,6 +1,6 @@
 .userlist{
     width: 350px;
-    height: calc(98vh - 100px);
+    height: calc(91vh - 100px);
     margin-right: 20px;
     overflow: scroll;
     background-color: #1d1b31;

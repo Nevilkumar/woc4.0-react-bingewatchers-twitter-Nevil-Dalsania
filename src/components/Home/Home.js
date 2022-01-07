@@ -33,7 +33,7 @@ const Home = () => {
                 user ? ( 
                 <div className='input-tweet'>
                     <form onSubmit={handleSubmit} >
-                        <textarea spellCheck="false" value={text} rows={8} cols={25} onChange={(e) => setText(e.target.value)}></textarea>
+                        <textarea spellCheck="false" value={text} rows={8} cols={26} onChange={(e) => setText(e.target.value)}></textarea>
                         <button type='submit'>Tweet</button>
                         <button className='reset-btn' type='reset' onClick={handleReset}>Reset</button>
                     </form>

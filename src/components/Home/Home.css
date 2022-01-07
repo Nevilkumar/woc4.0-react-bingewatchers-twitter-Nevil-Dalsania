@@ -6,7 +6,7 @@
 
 
 .home .input-tweet{
-    margin: 0px 20px;
+    margin-left: 20px;
 }
 .home .input-tweet form{
     display: flex;
@@ -56,6 +56,6 @@
     font-size: 25px;
     padding: 10px;
     text-align: center;
-    margin: 0px 20px;
+    margin-left: 20px;
     background-color: #1d1b31;
 }

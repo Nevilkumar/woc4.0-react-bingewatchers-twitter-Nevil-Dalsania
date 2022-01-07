@@ -1,5 +1,5 @@
 .userlist{
-    width: 340px;
+    width: 350px;
     height: calc(98vh - 100px);
     margin-right: 20px;
     overflow: scroll;
@@ -40,7 +40,7 @@
     text-align: left;
 }   
 .userlist .profile-container .follow-btn{
-    width: 80px;
+    width: 100px;
     font-size: 16px;
     padding: 5px;
     justify-self: flex-end;

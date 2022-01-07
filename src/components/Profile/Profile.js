@@ -19,6 +19,9 @@ const Profile = () => {
     const { uid } = useSelector((state) => state.auth.userInfo);
     const [photo, setPhoto] = useState(null);
 
+    let t = useSelector(state => state.user.filter((p) => p.uid === profileId))
+    t=t[0];
+    let st = t?.followers.findIndex((x) => x===uid);
 
     const handleImageChange = (e) => {
         if(e.target.files[0])
@@ -60,7 +63,7 @@ const Profile = () => {
 
                 {
                     uid !== profileId && 
-                    <button className='profile-follow-btn' onClick={handleFollow}>Following</button>
+                    <button className='profile-follow-btn' onClick={handleFollow}>{st!==-1 ? "Following" : "Follow"}</button>
                 }
                 <div className='tweets-follower-section'>
                     <div className='tweets-follower-child-section'>

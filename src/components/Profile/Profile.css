@@ -2,6 +2,7 @@
     margin-top: 100px;
     display: flex;
     justify-content: center;
+    /* align-items: center; */
 }
 
 .profile .personal-info{
@@ -11,6 +12,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     background-color: #1d1b31;
     border-radius: 5px;
     font-size: 23px;

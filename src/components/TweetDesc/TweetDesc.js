@@ -7,7 +7,7 @@ import moment from 'moment';
 import './TweetDesc.css'
 import userImage from '../Images/default.png';
 import sample from '../Images/sample1.jpg';
-import { createComment } from '../../Store/Actions/CommentAction';
+import { createComment } from '../../Store/Actions/TweetAction';
 import SingleComment from './SingleComment/SingleComment';
 
 const TweetDesc = () => {
@@ -17,8 +17,6 @@ const TweetDesc = () => {
     let urlTweetId = id;
 
     const data = useSelector(state => state.post);
-    const allComments = useSelector(state => state.comment.filter((p) => p.tweetId === urlTweetId));
-    
     
     let CurrentTweet = data.find(p => p?.tweetId === urlTweetId)
     const profileUser = useSelector(state => state.user.find((p) => p?.uid === CurrentTweet?.uid))
@@ -47,12 +45,12 @@ const TweetDesc = () => {
                     <div className='content-title'>
                         <div className='profile-container'>
                             <img className='profile-image' src={profileUser?.photoURL} alt='profile' />
-                            <Link to={profileLink}>@{CurrentTweet?.name}</Link>
+                            <Link to={profileLink}>@{profileUser?.name}</Link>
                         </div>
                     </div>
                     {/* <img className='tweet-image' src={sample} alt="sample" /> */}
                     <div className='content-container'>
-                        <p className='content'>{CurrentTweet?.tweet}</p>
+                        <p className='content'>{CurrentTweet?.tweetBody}</p>
                         <p className='content-date'>{timestamp}</p>
                     </div>
                 </div>
@@ -65,8 +63,8 @@ const TweetDesc = () => {
 
             <div className='display-comment-section'>
                 {
-                    allComments &&
-                    allComments.map((c, id) => <SingleComment key={id} data={c} />)
+                    CurrentTweet.comments &&
+                    CurrentTweet.comments.map((c, id) => <SingleComment key={id} data={c} />)
                 }
             </div>
         </div>

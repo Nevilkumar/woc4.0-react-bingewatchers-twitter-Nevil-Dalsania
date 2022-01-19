@@ -1,24 +1,22 @@
 import {db} from "../../firebaseConfig";
 
 
-export const createTweet = (data) => async(dispatch, getState) => {
+export const createTweet = (tweetBody) => async(dispatch, getState) => {
 
     try {
-        let content = {
-            tweet: data,
-            createdAt: Date.now(),
-            likes: []
-        }
         const user = getState().auth.userInfo;
-        const { uid } = user;
-        const userData = await db.collection("users").where("uid", "==" ,uid).limit(1).get();
+        
+        let content = {
+            uid: user.uid,
+            tweetBody: tweetBody,
+            likes: [],
+            comments: [],
+            createdAt: Date.now(),
+        }
 
-        userData.forEach((p) => content = {...content, ...p.data()})
+        const newTweet = await db.collection('Tweets').add(content);
 
-        const res = await db.collection('Tweets').add(content);
-        const { id } = res;
-
-        dispatch({ type: 'CREATE_TWEET', data: { ...content, tweetId: id}});  
+        dispatch({ type: 'CREATE_TWEET', data: { ...content, tweetId: newTweet.id}});  
 
     } catch (error) {
         console.log(error);
@@ -44,11 +42,11 @@ export const fetchTweets = () => async(dispatch, getState) => {
 
 }
 
-export const deleteTweets = (id) => async(dispatch, getState) => {
+export const deleteTweets = (tweetId) => async(dispatch, getState) => {
 
     try {
-        await db.collection("Tweets").doc(id).delete();
-        dispatch({ type: 'DELETE_TWEETS', data:id});  
+        await db.collection("Tweets").doc(tweetId).delete();
+        dispatch({ type: 'DELETE_TWEETS', data:tweetId });  
 
     } catch (error) {
         console.log(error);
@@ -56,13 +54,11 @@ export const deleteTweets = (id) => async(dispatch, getState) => {
 
 }
 
-export const updateTweets = (id, data) => async(dispatch, getState) => {
+export const updateTweets = (tweetId, tweetBody) => async(dispatch, getState) => {
 
     try {
-        
-        await db.collection("Tweets").doc(id).update({tweet:data});
-
-        dispatch({ type: 'UPDATE_TWEETS', data: {tweet: data, tweetId:id}});  
+        await db.collection("Tweets").doc(tweetId).update({ tweetBody:tweetBody });
+        dispatch({ type: 'UPDATE_TWEETS', data: { tweetBody: tweetBody, tweetId: tweetId } });  
 
     } catch (error) {
         console.log(error);
@@ -76,19 +72,45 @@ export const likeTweets = (tweetId) => async(dispatch, getState) => {
         const user = getState().auth.userInfo;
         const { uid } = user;
 
-        let res = await db.collection("Tweets").doc(tweetId).get();
-        res = res.data().likes;
+        let { likes: likesArray } = (await db.collection("Tweets").doc(tweetId).get()).data();
 
-        const ind = res.findIndex((id) => id === uid);
+        const ind = likesArray.findIndex((id) => id === uid);
 
         if(ind===-1)
-            res.push(uid);
+            likesArray.push(uid);
         else
-            res = res.filter((id) => id !== uid);
+            likesArray = likesArray.filter((id) => id !== uid);
 
-        await db.collection("Tweets").doc(tweetId).update({likes: res});
+        await db.collection("Tweets").doc(tweetId).update({ likes: likesArray });
 
-        dispatch({ type: 'LIKE_TWEETS', data: {likes: res, tweetId: tweetId}});  
+        dispatch({ type: 'LIKE_TWEETS', data: { likes: likesArray, tweetId: tweetId }});  
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+
+
+export const createComment = (tweetId, commentBody) => async(dispatch, getState) => {
+
+    try {
+        const user = getState().auth.userInfo;
+        const { uid } = user;
+
+        let content = {
+            uid: uid,
+            commentBody: commentBody,
+            createdAt: Date.now(),
+        }
+
+        let {comments: postComments} = (await db.collection("Tweets").doc(tweetId).get()).data();
+        postComments.push(content);
+        await db.collection("Tweets").doc(tweetId).update({ comments: postComments });
+        
+
+        dispatch({ type: 'CREATE_COMMENT', data: { postComments: postComments, tweetId: tweetId}});  
 
     } catch (error) {
         console.log(error);

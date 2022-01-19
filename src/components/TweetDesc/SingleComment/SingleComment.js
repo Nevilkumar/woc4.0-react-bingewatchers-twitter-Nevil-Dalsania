@@ -13,7 +13,7 @@ const SingleComment = ({data}) => {
     return (
         <div className='individual-comment'>
             <Link to={profileUrl} className='comment-user'>@{userData?.name}</Link>
-            <h1 className='comment-content'>{data?.comment}</h1>
+            <h1 className='comment-content'>{data?.commentBody}</h1>
         </div>
     )
 }

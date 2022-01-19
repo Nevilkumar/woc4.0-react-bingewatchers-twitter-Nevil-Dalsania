@@ -41,6 +41,9 @@ export const signUp = (data, navigate) => async(dispatch, getState) => {
             uid: user.uid,
             name: data.username,
             email: data.email,
+            photoURL: "https://firebasestorage.googleapis.com/v0/b/twitter-85307.appspot.com/o/profileImages%2FPngItem_1468479.png?alt=media&token=8e4a002a-432f-43b6-a663-ed29cc5bd5a2",
+            followers: [],
+            following:[],
         })
         dispatch({type:'SIGN_UP', data:user});
         getState().auth.error = null;

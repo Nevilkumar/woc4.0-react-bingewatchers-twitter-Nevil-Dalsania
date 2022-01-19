@@ -9,7 +9,7 @@ import SingleTweet from './SingleTweet/SingleTweet';
 const TweetList = () => {
 
     const posts = useSelector((state) => state.post);
-
+    
     return (
         <div className='tweets-container'>
             {

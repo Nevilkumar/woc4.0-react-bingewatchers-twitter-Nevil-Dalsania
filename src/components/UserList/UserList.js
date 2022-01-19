@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 
 
 import './UserList.css'
-import userImage from '../Images/default.png';
-import { fetchUsers, followUnfollow } from '../../Store/Actions/UserAction'
+import { followUnfollow } from '../../Store/Actions/UserAction'
 
 const UserList = () => {
 
@@ -20,10 +19,6 @@ const UserList = () => {
     let t = useSelector(state => state.user.filter((p) => p.uid === id))
     t=t[0]?.following;
 
-    useEffect(() => {
-        dispatch(fetchUsers());
-    }, [dispatch])
-    
 
     const handleFollow = (profileId) => {
         dispatch(followUnfollow(profileId));

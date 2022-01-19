@@ -19,7 +19,6 @@ import UnProtectedRoutes from './components/PrivateRoutes/UnProtectedRoutes.js';
 import TweetDesc from './components/TweetDesc/TweetDesc.js';
 import { fetchUsers } from './Store/Actions/UserAction.js';
 import { fetchTweets } from './Store/Actions/TweetAction.js';
-import { fetchComment } from './Store/Actions/CommentAction.js';
 import Footer from './components/Footer/Footer.js';
 
 const App = () => {
@@ -41,8 +40,7 @@ const App = () => {
 
     dispatch(fetchUsers());
     dispatch(fetchTweets());
-    dispatch(fetchComment());
-
+    
   }, [dispatch]);
 
   return (

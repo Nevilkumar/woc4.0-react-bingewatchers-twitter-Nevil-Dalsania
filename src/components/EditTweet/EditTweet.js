@@ -14,11 +14,13 @@ const EditTweet = () => {
 
     const CurrentTweet = useSelector(state => state.post.find((p) => p.tweetId === editId));
 
-    const [editedText, setEditedText] = useState(CurrentTweet?.tweet);
+    const [editedText, setEditedText] = useState(CurrentTweet?.tweetBody);
 
     useEffect(() => {
-        setEditedText(CurrentTweet?.tweet)
-    }, [CurrentTweet])
+        setEditedText(CurrentTweet?.tweetBody)
+    }, [CurrentTweet]);
+
+    
     const handleEditChange = () => {
             dispatch(updateTweets(editId, editedText));
             navigate('/');

@@ -23,7 +23,6 @@ const SingleTweet = ({tweet}) => {
     timestamp = moment(tmp).format('MMM Do YYYY, h:mm:ss a');
     
     const user = useSelector(state => state.auth.userInfo);
-    const comments = useSelector(state => state.comment.filter((p) => p.tweetId === tweet?.tweetId));
     const profileUser = useSelector(state => state.user.find((p) => p?.uid === tweet?.uid))
 
 
@@ -45,7 +44,7 @@ const SingleTweet = ({tweet}) => {
             <div className='content-title'>
                 <div className='profile-container'>
                     <img className='profile-image' src={profileUser?.photoURL} alt='profile' />
-                    <Link to={profileLink}>@{tweet?.name}</Link>
+                    <Link to={profileLink}>@{profileUser?.name}</Link>
                 </div>
                 <div>
                     <Link to={tweetLink}><CgMaximizeAlt className='admin-btn' /></Link>
@@ -61,7 +60,7 @@ const SingleTweet = ({tweet}) => {
             </div>
             {/* <img className='tweet-image' src={sample} alt="sample" /> */}
             <div className='content-container'>
-                <p className='content'>{tweet?.tweet}</p>
+                <p className='content'>{tweet?.tweetBody}</p>
                 <p className='content-date'>{timestamp}</p>
             </div>
             {
@@ -83,7 +82,7 @@ const SingleTweet = ({tweet}) => {
 
                     <div className='comments-container'>
                         <Link to={tweetLink}><FaComment className='comment-btn' fontSize={31} /></Link>
-                        <p className='comments-number'>{comments.length}</p>
+                        <p className='comments-number'>{tweet.comments?.length}</p>
                     </div>
                 </div>
             }

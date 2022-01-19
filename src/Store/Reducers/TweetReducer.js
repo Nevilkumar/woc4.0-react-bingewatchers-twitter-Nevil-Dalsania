@@ -9,9 +9,11 @@ const TweetReducer = (state = [], action) => {
         case 'DELETE_TWEETS':
             return state.filter((post) => post.tweetId !== action.data);
         case 'UPDATE_TWEETS':
-            return state.map((post) => post.tweetId === action.data.tweetId ? {...post, tweet:action.data.tweet} : post);
+            return state.map((post) => post.tweetId === action.data.tweetId ? {...post, tweetBody:action.data.tweetBody} : post);
         case 'LIKE_TWEETS':
             return state.map((post) => post.tweetId === action.data.tweetId ? {...post, likes:action.data.likes} : post);
+        case 'CREATE_COMMENT':
+            return state.map((post) => post.tweetId === action.data.tweetId ? {...post, comments:action.data.postComments} : post);
         default:
             return state;
     }

@@ -1,4 +1,4 @@
-import {auth, db} from "../../firebaseConfig";
+import { db } from "../../firebaseConfig";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export const fetchUsers = () => async(dispatch, getState) => {
@@ -67,7 +67,7 @@ export const followUnfollow = (profileId) => async(dispatch, getState) => {
             tmpData1 = p.data(); 
             docId1 = p.id
         })
-        console.log(tmpData)
+        
         let followId = tmpData.following.findIndex((x) => x === profileId);
 
         if(followId===-1)
@@ -79,7 +79,6 @@ export const followUnfollow = (profileId) => async(dispatch, getState) => {
         {
             tmpData.following = tmpData.following.filter((i) => i !== profileId);
             tmpData1.followers = tmpData1.followers.filter((i) => i !== uid);
-
         }
 
         db.collection("users").doc(docId).update({following: tmpData.following.length === 0 ? [] : tmpData.following })

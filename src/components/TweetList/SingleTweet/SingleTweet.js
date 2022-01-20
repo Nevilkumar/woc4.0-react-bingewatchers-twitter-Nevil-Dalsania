@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineEdit } from 'react-icons/ai';
-import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { CgMaximizeAlt } from 'react-icons/cg';
-import { RiThumbUpFill, RiThumbUpLine } from 'react-icons/ri';
-import { FaComment } from 'react-icons/fa';
+import { RiThumbUpFill, RiThumbUpLine, RiDeleteBin6Line } from 'react-icons/ri';
+import { MdModeComment } from 'react-icons/md';
 
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,7 +10,8 @@ import moment from 'moment'
 
 import sample from '../../Images/sample1.jpg';
 import './SingleTweet.css'
-import { deleteTweets, likeTweets } from '../../../Store/Actions/TweetAction';
+import { likeTweets } from '../../../Store/Actions/TweetAction';
+import Modal from '../Modal/Modal';
 
 const SingleTweet = ({tweet}) => {
 
@@ -25,6 +25,8 @@ const SingleTweet = ({tweet}) => {
     const user = useSelector(state => state.auth.userInfo);
     const profileUser = useSelector(state => state.user.find((p) => p?.uid === tweet?.uid))
 
+    const [openModal, setOpenModal] = useState(false);
+    const [deleteId, setDeleteId] = useState(null);
 
     const Likes = () => {
         return tweet?.likes.find((like) => like === (user?.uid))
@@ -40,6 +42,9 @@ const SingleTweet = ({tweet}) => {
     let editLink = "/edit/" + tweet?.tweetId;
 
     return (
+        <>
+        { openModal &&  <Modal setOpenModal={setOpenModal} deleteId={deleteId} setDeleteId={setDeleteId} />}
+      
         <div className='tweet'>
             <div className='content-title'>
                 <div className='profile-container'>
@@ -53,7 +58,13 @@ const SingleTweet = ({tweet}) => {
 
                         <>
                             <Link to={editLink}><AiOutlineEdit className='admin-btn admin-edit-btn' /></Link>
-                            <RiDeleteBin5Fill className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} />
+                            {/* <RiDeleteBin6Line className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} /> */}
+                            <RiDeleteBin6Line className='admin-btn admin-delete-btn' 
+                                onClick={() => {
+                                    setOpenModal(true);
+                                    setDeleteId(tweet.tweetId);
+                                }}
+                            />
                         </>
                     } 
                 </div>
@@ -81,12 +92,13 @@ const SingleTweet = ({tweet}) => {
                     </div>
 
                     <div className='comments-container'>
-                        <Link to={tweetLink}><FaComment className='comment-btn' fontSize={31} /></Link>
+                        <Link to={tweetLink}><MdModeComment className='comment-btn' fontSize={31} /></Link>
                         <p className='comments-number'>{tweet.comments?.length}</p>
                     </div>
                 </div>
             }
         </div>
+        </>
     )
 }
 

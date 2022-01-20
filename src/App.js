@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { CircularProgress } from '@material-ui/core';
 
+// Semantic UI CSS
+
 // Components Import
 import Signup from './components/Signup/Signup.js';
 import Login from './components/Login/Login.js';

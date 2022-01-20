@@ -22,9 +22,12 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-transition-group": "^4.4.2",
     "redux": "^4.1.2",
     "redux-firestore": "^0.15.0",
     "redux-thunk": "^2.4.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.4",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.2"
   },

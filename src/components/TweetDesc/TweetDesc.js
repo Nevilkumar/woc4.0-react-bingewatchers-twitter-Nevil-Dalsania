@@ -63,8 +63,8 @@ const TweetDesc = () => {
 
             <div className='display-comment-section'>
                 {
-                    CurrentTweet.comments &&
-                    CurrentTweet.comments.map((c, id) => <SingleComment key={id} data={c} />)
+                    CurrentTweet?.comments &&
+                    CurrentTweet?.comments.slice(0).reverse().map((c, id) => <SingleComment key={id} data={c} />)
                 }
             </div>
         </div>

@@ -6,7 +6,7 @@
 }
 
 .profile .personal-info{
-    width: 26vw;
+    width: 24vw;
     height: calc(91vh - 100px);
     margin-right: 20px;
     color: white;
@@ -14,7 +14,7 @@
     flex-direction: column;
     /* justify-content: center; */
     background-color: #1d1b31;
-    border-radius: 5px;
+    border-radius: 2px;
     font-size: 23px;
     align-items: center;
     padding: 35px 0px;
@@ -75,7 +75,7 @@
     color: white;
     font-size: 18px;
     letter-spacing: 1.3px;
-    border-radius: 4px;
+    border-radius: 2px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -104,7 +104,7 @@
     color: white;
     font-size: 20px;
     letter-spacing: 1.3px;
-    border-radius: 4px;
+    border-radius: 2px;
     outline: none;
     border: none;
     margin: 15px 0px;

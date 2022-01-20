@@ -5,7 +5,7 @@
     word-wrap: break-word;
     margin-bottom: 15px;
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .tweet .content-title{
@@ -55,7 +55,7 @@
 
 .tweet .tweet-image{
     width: 100%;
-    border-radius: 4px;
+    border-radius: 2px;
     margin-bottom: 20px;
 }
 

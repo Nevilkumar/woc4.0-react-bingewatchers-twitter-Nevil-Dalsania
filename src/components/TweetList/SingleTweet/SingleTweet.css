@@ -36,7 +36,7 @@
 .tweet .admin-btn{
     font-size: 33px;
     cursor: pointer;
-    margin-right: 15px;
+    margin-left: 15px;
     transition: all 250ms ease-in-out;
 }
 
@@ -138,5 +138,50 @@
     
     .tweet{
         width: 90vw;
+        padding: 15px;
+    }
+
+    .tweet .profile-image{
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+
+    .tweet .content-title a{
+        font-size: 20px;
+    }
+
+    .tweet .admin-btn{
+        font-size: 26px;
+    }
+
+    .tweet .admin-btn:hover{
+        filter: brightness(100%);
+        transform: scale(1);
+    }
+
+    .tweet .content{
+        font-size: 17px;
+    }
+    .tweet .content-date{
+        font-size: 17px;
+    }
+
+    .tweet .likes-comments{
+        margin-top: 12px;
+    }
+
+    .tweet .likes-number{
+        font-size: 17px;
+    }
+
+    .tweet .comments-number{
+        font-size: 17px;
+    }
+
+    .tweet .likes-comments button:hover{
+        filter: brightness(100%);
+        transform: scale(1);
     }
 }

@@ -20,7 +20,8 @@ body{
 }
 
 .home-loading{
-    width: 40px;
+    width: 100vw;
+    text-align: center;
     margin: 50px auto;
 }
 
@@ -29,4 +30,10 @@ button{
 }
 button:hover{
     filter: brightness(150%);
+}
+
+@media screen and (max-width:1000px){
+    button:hover{
+        filter: brightness(100%);
+    }
 }

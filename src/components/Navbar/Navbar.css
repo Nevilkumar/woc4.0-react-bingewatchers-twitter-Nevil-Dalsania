@@ -120,6 +120,7 @@
   }
   .navbar .topnav{
       width: 100vw;
+      height: 60px;
   }
 
   .link-container{
@@ -144,14 +145,14 @@
     background-color: transparent !important;
   }
   .nav-links{
-    z-index: 3;
+    z-index: 2;
     text-align: center;
     line-height: 60px;
     padding: 10px 0px;
     margin: 0;
     width: 100%;
     background-color: #11101D !important;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 2.2px;
     color: white;

@@ -45,9 +45,6 @@
     cursor: pointer;
     transition: all 250ms ease-out;
 }
-.home .input-tweet form button:hover{
-    filter: brightness(150%);
-}
 
 .reset-btn{
    margin-top: 0px !important;
@@ -98,10 +95,14 @@
         align-items: center;
         margin: 8px 0px;
     }
+
     .home .input-tweet form button{
         display: inline-block;
         width: 43vw;
-        margin: 10px 0px;
+        margin: 5px 0px;
+        font-size: 20px;
+        height: 45px;
+        border: 3px solid #3D59AB;
     }
     .reset-btn{
         margin: 0px !important;
@@ -110,5 +111,7 @@
         width: 90vw;
         margin: 0;
         margin-bottom: 20px;
+        font-size: 22px;
+        height: 80px;
     }
 }

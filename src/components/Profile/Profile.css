@@ -82,9 +82,7 @@
     margin-left: 20px;
     transition: all 250ms ease-out;
 }
-.profile .box button:hover{
-    filter: brightness(150%);
-}
+
 
 /* end css for file input */
 
@@ -110,9 +108,7 @@
     margin: 15px 0px;
     cursor: pointer;
 }
-.profile .profile-follow-btn:hover{
-    filter: brightness(150%);
-}
+
 
 .profile .tweets-follower-section{
     display: flex;
@@ -144,5 +140,27 @@
         margin: 0;
         height: fit-content;
         margin-bottom: 20px;
+        font-size: 21px;
+    }
+
+    .profile .main-profile-image{
+        width: 180px;
+        height: 180px;
+        margin-bottom: 12px;
+    }
+
+
+    .profile .mt-p{
+        margin-top: 10px;
+    }
+    .profile .mb-p{
+        margin-bottom: 5px;
+    }
+
+    .profile .profile-follow-btn{
+        width: 130px;
+        height: 40px;
+        font-size: 19px;
+        margin-bottom: 8px;
     }
 }

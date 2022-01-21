@@ -115,5 +115,39 @@
 @media screen and (max-width:1000px){
     .signup form{
         width: 90vw;
+        padding: 20px 18px;
+    }
+
+    .signup .error-line{
+        font-size: 18px;
+    }
+
+    .signup form h3{
+        font-size: 30px;
+    }
+
+    .signup label{
+        margin-top: 13px;
+        font-size: 18px;
+    }
+
+    .signup input{
+        height: 38px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-weight: normal;
+    }
+
+    .signup button{
+        padding: 8px 0;
+        font-size: 20px;
+    }
+
+    .signup .links{
+        font-size: 18px;
+    }
+    
+    .signup .links a{
+        font-size: 18px;
     }
 }

@@ -25,7 +25,7 @@
     cursor: pointer;
     background: #3D59AB;
     color: white;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 250ms ease-out;
 }
 
@@ -36,5 +36,10 @@
     .edit-section textarea{
         width: 90vw;
         height: 150px;
+        font-size: 19px;
+    }
+    .edit-section button{
+        font-size: 19px;
+        padding: 10px 20px;
     }
 }

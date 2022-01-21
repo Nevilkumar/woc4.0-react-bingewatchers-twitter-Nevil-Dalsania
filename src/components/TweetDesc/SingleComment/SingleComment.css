@@ -28,5 +28,13 @@
 
     .individual-comment{
         width: 90vw;
+        padding: 8px;
+    }
+
+    .individual-comment .comment-user{
+        font-size: 17px;
+    }
+    .individual-comment .comment-content{
+        font-size: 17px;
     }
 }

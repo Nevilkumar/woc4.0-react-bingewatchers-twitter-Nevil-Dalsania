@@ -62,10 +62,17 @@
     }
     .single-tweet-section .comment-input-div{
         width: 90vw;
+        margin-bottom: 20px;
     }
 
     .single-tweet-section .comment-input-div input{
         width: 100%;
+        height: 35px;
+    }
+
+    .single-tweet-section .comment-input-div button{
+        padding: 8px 22px;
+        font-size: 19px;
     }
     .single-tweet-section .display-comment-section{
         width: 90vw;

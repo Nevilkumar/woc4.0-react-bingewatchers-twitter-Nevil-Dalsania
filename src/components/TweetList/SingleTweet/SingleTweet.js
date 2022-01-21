@@ -31,9 +31,9 @@ const SingleTweet = ({tweet}) => {
     const Likes = () => {
         return tweet?.likes.find((like) => like === (user?.uid))
         ? (
-            <RiThumbUpFill className="like-btn" fontSize={31} />
+            <RiThumbUpFill className="like-btn" fontSize={28} />
         ) : (
-            <RiThumbUpLine className="like-btn" fontSize={31} />
+            <RiThumbUpLine className="like-btn" fontSize={28} />
         );
     };
 
@@ -92,7 +92,7 @@ const SingleTweet = ({tweet}) => {
                     </div>
 
                     <div className='comments-container'>
-                        <Link to={tweetLink}><MdModeComment className='comment-btn' fontSize={31} /></Link>
+                        <Link to={tweetLink}><MdModeComment className='comment-btn' fontSize={28} /></Link>
                         <p className='comments-number'>{tweet.comments?.length}</p>
                     </div>
                 </div>

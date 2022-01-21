@@ -23,7 +23,16 @@
     font-size: 20px;
     background-color: #e7f0ed;
 }
+
+.input-tweet-btns{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .home .input-tweet form button{
+    width: 100%;
     height: 50px;
     font-size: 24px;
     border-radius: 2px;
@@ -54,11 +63,52 @@
     align-items: center;
     letter-spacing: 1.2px;
     height: 100px;
-    border-radius: 8px;
+    border-radius: 2px;
     color: white;
     font-size: 25px;
     padding: 10px;
     text-align: center;
     margin-left: 20px;
     background-color: #1d1b31;
+}
+
+
+@media screen and (max-width:1000px){
+    .home{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .home .input-tweet{
+        margin: 0;
+    }
+
+    .home .input-tweet form textarea{
+        width: 90vw !important;
+        height: 150px !important;
+    }
+
+    .input-tweet-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 8px 0px;
+    }
+    .home .input-tweet form button{
+        display: inline-block;
+        width: 43vw;
+        margin: 10px 0px;
+    }
+    .reset-btn{
+        margin: 0px !important;
+    }
+    .unAuth{
+        width: 90vw;
+        margin: 0;
+        margin-bottom: 20px;
+    }
 }

@@ -13,3 +13,10 @@
     left: 0;
     right: 0;
 }
+
+
+@media screen and (max-width:1000px){
+    .footer-container{
+        display: none;
+    }
+}

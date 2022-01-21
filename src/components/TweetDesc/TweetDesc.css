@@ -52,3 +52,26 @@
     word-wrap: break-word;
     margin-bottom: 60px;
 }
+
+
+
+@media screen and (max-width:1000px){
+
+    .full-tweet{
+        margin-top: 20px;
+    }
+    .single-tweet-section .comment-input-div{
+        width: 90vw;
+    }
+
+    .single-tweet-section .comment-input-div input{
+        width: 100%;
+    }
+    .single-tweet-section .display-comment-section{
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

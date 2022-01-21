@@ -22,3 +22,11 @@
     font-weight: normal;
     margin-top: 8px;
 }
+
+
+@media screen and (max-width:1000px){
+
+    .individual-comment{
+        width: 90vw;
+    }
+}

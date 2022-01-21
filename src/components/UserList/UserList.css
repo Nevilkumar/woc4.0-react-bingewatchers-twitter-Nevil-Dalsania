@@ -57,3 +57,11 @@
 .userlist .profile-container .follow-btn:hover{
     filter: brightness(150%);
 }
+
+
+
+@media screen and (max-width:1000px){
+    .userlist{
+        display: none;
+    }
+}

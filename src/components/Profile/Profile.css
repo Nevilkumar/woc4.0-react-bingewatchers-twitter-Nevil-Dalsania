@@ -128,3 +128,21 @@
 }
 
 
+
+@media screen and (max-width:1000px){
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .profile .personal-info{
+        width: 90vw;
+        margin: 0;
+        height: fit-content;
+        margin-bottom: 20px;
+    }
+}

@@ -110,3 +110,10 @@
     text-decoration: none;
     font-size: 18px;
 }
+
+
+@media screen and (max-width:1000px){
+    .signup form{
+        width: 90vw;
+    }
+}

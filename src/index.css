@@ -14,6 +14,7 @@
 }
 body{
     background-color: #11101D;
+    min-height: 100%;
 }
 #root{
     width: 100vw;

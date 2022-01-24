@@ -12,11 +12,11 @@
 .login{
     background: #11101D;
     width: 100vw;
-    min-height: calc(100vh - 70px - 45px);
     margin-top: 70px;
+    padding: 20px;
+    padding-top: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .login form{
@@ -118,11 +118,6 @@
 }
 
 @media screen and (max-width:1000px){
-
-    .login{
-        margin: 0px;
-        height: calc(100vw - 60px);
-    }
 
     .login form{
         width: 90vw;

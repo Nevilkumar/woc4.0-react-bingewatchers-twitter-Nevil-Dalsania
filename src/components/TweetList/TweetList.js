@@ -11,7 +11,6 @@ const TweetList = () => {
 
     const posts = useSelector((state) => state.post);
     
-    console.log(posts);
     return (
         <div className='tweets-container'>
             {

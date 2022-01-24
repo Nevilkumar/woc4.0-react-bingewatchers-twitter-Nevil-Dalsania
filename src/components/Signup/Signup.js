@@ -45,13 +45,13 @@ const Signup = () => {
             <h3>Sign up</h3>
             { error && <p className='error-line'>{error}</p>}
             <label>Username</label>
-            <input required type="text" value={details.username} name="username" placeholder="Username" onChange={handleChange} spellCheck="false" />
+            <input autoComplete="off" required type="text" value={details.username} name="username" placeholder="Username" onChange={handleChange} spellCheck="false" />
 
             <label>Email</label>
-            <input required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
+            <input autoComplete="off" required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
 
             <label>Password</label>
-            <input required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
+            <input autoComplete="off" required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
 
             <button type='submit'>Sign up</button>
             <p className="links">Already Have An Account? <Link to='/login'>Click Here</Link></p>

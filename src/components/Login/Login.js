@@ -44,10 +44,10 @@ const Login = () => {
             <h3>Login</h3>
             { error && <p className='error-line'>{error}</p>}
             <label>Email</label>
-            <input required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
+            <input autoComplete="off" required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
 
             <label>Password</label>
-            <input required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
+            <input autoComplete="off" required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
 
             <button type='submit'>Login</button>
             <p className="links">Don't Have An Account? <Link to='/signup'>Click Here</Link></p>

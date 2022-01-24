@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { CircularProgress } from '@material-ui/core';
 
 import './Home.css';
 import { createTweet } from '../../Store/Actions/TweetAction';
@@ -14,8 +15,11 @@ const Home = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createTweet(text));
-        setText("");
+        if(text!=="")
+        {
+            dispatch(createTweet(text));
+            setText("");
+        }
     }
 
     const handleReset = () => {

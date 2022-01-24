@@ -12,18 +12,18 @@
 
 .signup{
     background: #11101D;
+    width: 100vw;
+    min-height: calc(100vh - 70px - 45px);
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .signup form{
-    margin-top: 15px;
-    margin-bottom: 30px;
     width: 520px;
     background-color: rgba(255, 255, 255, 0.06);
     background: #1d1b31;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
     border-radius: 2px;
     backdrop-filter: blur(10px);
     border: 2px solid white;
@@ -77,6 +77,9 @@
     color: #acacac;
 }
 .signup button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Work Sans', sans-serif;
     margin-top: 30px;
     width: 100%;
@@ -86,18 +89,21 @@
     text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
-    border: 2px solid white;
-    background-color: #ffffff;
-    color: #080710;
-    font-weight: bolder;
-    transition: all 250ms ease-out;
-}
-.signup button:hover{
+    /* background-color: #ffffff; */
+    /* color: #080710; */
+    /* border: 2px solid white; */
     background-color: rgb(9, 8, 18, 0.2);
     color: #ffffff;
     border: 2px solid white;
     font-weight: normal;
+    transition: all 250ms ease-out;
 }
+/* .signup button:hover{
+    background-color: rgb(9, 8, 18, 0.2);
+    color: #ffffff;
+    border: 2px solid white;
+    font-weight: normal;
+} */
 
 .signup .links{
     margin-top: 20px;
@@ -113,6 +119,10 @@
 
 
 @media screen and (max-width:1000px){
+    .signup{
+        margin: 0px;
+        height: calc(100vw - 60px);
+    }
     .signup form{
         width: 90vw;
         padding: 20px 18px;

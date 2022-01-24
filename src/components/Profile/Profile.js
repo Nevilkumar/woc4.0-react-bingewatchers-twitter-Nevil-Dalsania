@@ -29,6 +29,7 @@ const Profile = () => {
             setPhoto(e.target.files[0]);
         }            
     }
+    
 
     const handleImageUpload = () => {
         if(photo)

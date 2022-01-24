@@ -32,8 +32,11 @@ const TweetDesc = () => {
 
     const [cmnt, setCmnt] = useState("");
     const handleComment = () => {
-        dispatch(createComment(urlTweetId, cmnt));
-        setCmnt("");
+        if(cmnt!=="")
+        {
+            dispatch(createComment(urlTweetId, cmnt));
+            setCmnt("");
+        }
     }
 
     return (

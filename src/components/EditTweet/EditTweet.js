@@ -22,8 +22,11 @@ const EditTweet = () => {
 
     
     const handleEditChange = () => {
+        if(editedText!=="")
+        {
             dispatch(updateTweets(editId, editedText));
             navigate('/');
+        }
     };
 
     return (

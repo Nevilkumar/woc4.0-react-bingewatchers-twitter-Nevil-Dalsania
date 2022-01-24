@@ -12,14 +12,13 @@ const Signup = () => {
     const navigate = useNavigate();
     const error = useSelector(state => state.auth.error);
 
-   
     const [details, setDetails] = useState({
         username: '',
         email: '',
         password: ''
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(signUp(details, navigate));
     }
@@ -46,15 +45,15 @@ const Signup = () => {
             <h3>Sign up</h3>
             { error && <p className='error-line'>{error}</p>}
             <label>Username</label>
-            <input type="text" value={details.username} name="username" placeholder="Username" onChange={handleChange} />
+            <input required type="text" value={details.username} name="username" placeholder="Username" onChange={handleChange} spellCheck="false" />
 
             <label>Email</label>
-            <input type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} />
+            <input required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
 
             <label>Password</label>
-            <input type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} />
+            <input required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
 
-            <button>Sign Up</button>
+            <button type='submit'>Sign up</button>
             <p className="links">Already Have An Account? <Link to='/login'>Click Here</Link></p>
         </form>
         </div>

@@ -11,15 +11,17 @@
 
 .login{
     background: #11101D;
+    width: 100vw;
+    min-height: calc(100vh - 70px - 45px);
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login form{
     width: 520px;
     background: #1d1b31;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
     border-radius: 2px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255, 0.2);
@@ -74,6 +76,9 @@
     color: #acacac;
 }
 .login button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Work Sans', sans-serif;
     margin-top: 40px;
     width: 100%;
@@ -83,18 +88,22 @@
     text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
-    border: 2px solid white;
+    /* color: #080710;
     background-color: #ffffff;
-    color: #080710;
-    font-weight: bolder;
+    border: 2px solid white; */
+    background-color: rgb(9, 8, 18, 0.2);
+    color: #ffffff;
+    border: 2px solid white;
+
+    font-weight: normal;
     transition: all 250ms ease-out;
 }
-.login button:hover{
+/* .login button:hover{
     background-color: rgb(9, 8, 18, 0.2);
     color: #ffffff;
     border: 2px solid white;
     font-weight: normal;
-}
+} */
 
 .login .links{
     margin-top: 20px;
@@ -109,6 +118,12 @@
 }
 
 @media screen and (max-width:1000px){
+
+    .login{
+        margin: 0px;
+        height: calc(100vw - 60px);
+    }
+
     .login form{
         width: 90vw;
         padding: 20px 18px;

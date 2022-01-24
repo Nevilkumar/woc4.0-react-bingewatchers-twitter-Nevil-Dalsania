@@ -17,7 +17,7 @@ const Login = () => {
         password: ''
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(signIn(details, navigate));
     }
@@ -44,12 +44,12 @@ const Login = () => {
             <h3>Login</h3>
             { error && <p className='error-line'>{error}</p>}
             <label>Email</label>
-            <input type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} />
+            <input required type="email" value={details.email} name="email" placeholder="Email" onChange={handleChange} spellCheck="false" />
 
             <label>Password</label>
-            <input type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} />
+            <input required type="password" value={details.password} name="password" placeholder="Password" onChange={handleChange} spellCheck="false" />
 
-            <button>Login</button>
+            <button type='submit'>Login</button>
             <p className="links">Don't Have An Account? <Link to='/signup'>Click Here</Link></p>
         </form>
     </div>

@@ -20,4 +20,8 @@
     .tweets-container{
         max-height: fit-content;
     }
+
+    .load-container{
+        width: 90vw;
+    }
 }

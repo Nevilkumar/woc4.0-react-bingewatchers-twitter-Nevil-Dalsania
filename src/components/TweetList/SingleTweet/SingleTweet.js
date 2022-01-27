@@ -52,11 +52,11 @@ const SingleTweet = ({tweet}) => {
                     <Link to={profileLink}>@{profileUser?.name}</Link>
                 </div>
                 <div>
-                    <Link to={tweetLink}><CgMaximizeAlt className='admin-btn' /></Link>
                     {
                         (user?.uid === tweet?.uid) &&
 
                         <>
+                            <Link to={tweetLink}><CgMaximizeAlt className='admin-btn' /></Link>
                             <Link to={editLink}><AiOutlineEdit className='admin-btn admin-edit-btn' /></Link>
                             {/* <RiDeleteBin6Line className='admin-btn admin-delete-btn' onClick={() => dispatch(deleteTweets(tweet.tweetId))} /> */}
                             <RiDeleteBin6Line className='admin-btn admin-delete-btn' 

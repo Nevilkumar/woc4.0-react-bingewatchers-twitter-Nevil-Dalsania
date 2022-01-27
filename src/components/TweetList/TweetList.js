@@ -12,9 +12,10 @@ const TweetList = () => {
     const posts = useSelector((state) => state.post);
     
     return (
+        
         <div className='tweets-container'>
             {
-                !posts.length ? 
+                posts.length<=1 ? 
                     <div className='load-container'>
                         <CircularProgress color='secondary' size={60} />
                     </div>

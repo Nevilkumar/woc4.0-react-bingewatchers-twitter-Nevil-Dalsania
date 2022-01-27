@@ -23,6 +23,7 @@
     height: 37px;
     margin-right: 10px;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 .tweet .content-title a{

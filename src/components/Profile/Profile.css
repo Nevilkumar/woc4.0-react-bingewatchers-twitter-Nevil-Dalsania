@@ -31,6 +31,7 @@
     height: 200px;
     margin-bottom: 15px;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 /* CSS for file input */
@@ -123,7 +124,16 @@
     align-items: center;
 }
 
-
+.no-tweet-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.no-tweet-div > p{
+    font-size: 35px;
+}
 
 @media screen and (max-width:1000px){
 
@@ -162,5 +172,14 @@
         height: 40px;
         font-size: 19px;
         margin-bottom: 8px;
+    }
+
+
+    .no-tweet-div{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .no-tweet-div > p{
+        font-size: 30px;
     }
 }

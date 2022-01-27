@@ -15,6 +15,8 @@ const Profile = () => {
     const dispatch = useDispatch();
     const { profileId } = useParams();
     const posts = useSelector((state) => state.post.filter((p) => p?.uid === profileId));
+    const AllPosts = useSelector((state) => state.post);
+
     let userData = useSelector((state) => state.user.filter((p) => p?.uid === profileId)[0])
     const { uid } = useSelector((state) => state.auth.userInfo);
     const [photo, setPhoto] = useState(null);
@@ -85,15 +87,22 @@ const Profile = () => {
             
             <div className='tweets-container'>
                 {
-                    !posts.length ? 
+                    !AllPosts.length && !posts.length ? 
                         <div className='load-container'>
                             <CircularProgress color='secondary' size={60} />
                         </div>
                     :  
-                
-                    posts.map((post,id) => (
+                    
+                    (
+                        AllPosts.length && !posts.length ?
+                            <div className='tweet no-tweet-div'>
+                                <p>No Tweets</p>
+                            </div>
+                        :
+                        posts.map((post,id) => (
                            <SingleTweet key={id} tweet={post} />
-                    )) 
+                        )) 
+                    )
                 }
             </div>
         </div>

@@ -46,6 +46,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
+    
     !check ? <div className='home-loading'><CircularProgress color='secondary' size={80} /></div> :
     <>   
     <BrowserRouter>

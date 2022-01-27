@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/css/main.91a88198.css",
+    "main.js": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/js/main.6852b456.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/default.png": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/default.07300db72dd3c12efff9.png",
+    "static/media/sample1.jpg": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/media/sample1.f2cc81221d0678fe0e43.jpg",
+    "index.html": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/index.html",
+    "main.91a88198.css.map": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/css/main.91a88198.css.map",
+    "main.6852b456.js.map": "/woc4.0-react-bingewatchers-twitter-Nevil-Dalsania/static/js/main.6852b456.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91a88198.css",
+    "static/js/main.6852b456.js"
+  ]
+}

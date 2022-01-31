@@ -93,11 +93,15 @@
   border: none;
   cursor: pointer;
   text-align: center;
-  transition: 0.5s;
+  transition: all 250ms ease-out;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
+.navbar .logout-btn:hover{
+  background-color: #3D59AB;
+  filter: brightness(100%);
+}
 
 .navbar .active{
   background-color: #3D59AB;
@@ -109,7 +113,7 @@
   height: 3px;
   margin:5px auto;
   background-color: white;
-  transition: all 0.3s ease-in-out;
+  transition: all 250ms ease-out;
 }
 
 
